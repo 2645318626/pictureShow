@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>更多分类</title>
+    <link href="../../static/css/imgimg.css" type="text/css" rel="stylesheet"/>
+    <link href="../../static/css/top.css" type="text/css" rel="stylesheet"/>
+    <link href="../../static/css/bottom.css" type="text/css" rel="stylesheet"/>
+    <link href="../../static/css/all.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="nav">
+    <ul>
+        <li><a href="index.jsp">首页</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=图说新闻">图说新闻</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=美女">美女</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=搞笑">搞笑</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=壁纸">壁纸</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=明星">明星</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=家居">家居</a></li>
+        <c:if test="${sessionScope.username!=null}">
+            <li><a href="photoServlet?action=editPhotos">编辑图片</a></li>
+        </c:if>
+    </ul>
+</div>
+<div id="bg">
+    <div class="readme">
+        <h1>More classification</h1>
+        <div class="lrtk">
+            <a href="pages/user/imgimg2.html" class="box01"><span class="font">美女</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="pages/user/imgimg2.html" class="box02"><span class="font">动漫</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="pages/user/imgimg2.html" class="box03"><span class="font">小清新</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=创意设计" class="box04"><span class="font">创意设计</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=唯美" class="box05"><span class="font">唯美</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="pages/user/imgimg2.html" class="box06"><span class="font">游戏</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=壁纸" class="box07"><span class="font">壁纸</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=明星" class="box08"><span class="font">明星</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=欧美风格" class="box09"><span class="font">欧美风格</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=云" class="box10"><span class="font">云</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=水果" class="box11"><span class="font">水果</span>
+                <div class="opacity"></div>
+            </a>
+            <a href="photoServlet?action=keyShow&keyWords=森林" class="box12"><span class="font">森林</span>
+                <div class="opacity"></div>
+            </a>
+        </div>
+        <div id="bottom">
+            Copyright @ 2013-2014 duo duo photo <br/>
+            多多图库 多多有限公司 版权所有
+        </div>
+    </div>
+</div>
+</body>
+</html>

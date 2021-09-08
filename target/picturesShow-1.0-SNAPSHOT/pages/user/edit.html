@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../static/css/imgimg.css" type="text/css" rel="stylesheet"/>
+    <link href="../../static/css/top.css" type="text/css" rel="stylesheet"/>
+    <link href="../../static/css/bottom.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../static/css/edit.css">
+
+</head>
+<body>
+<div id="top"><img src="../../static/img/logo.png"/><span>我们既是图片的生产者，也是图片的搬运工</span></div>
+
+<div class="nav">
+    <ul>
+        <li><a href="index.jsp">首页</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=图说新闻">图说新闻</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=美女">美女</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=搞笑">搞笑</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=壁纸">壁纸</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=明星">明星</a></li>
+        <li><a href="photoServlet?action=keyShow&keyWords=家居">家居</a></li>
+        <c:if test="${sessionScope.username!=null}">
+            <li><a href="photoServlet?action=keyShow&keyWords=家居">编辑图片</a></li>
+        </c:if>
+    </ul>
+</div>
+<div class="container">
+    <div class="news-list">
+        <div class="news-list-left">
+            <div class="about">
+                <h4></h4>
+                <div class="about-des">
+                    <p><a href="photoServlet?action=editPhotos">编辑图片</a></p>
+                    <p><a href="/pages/admin/addPhotos.jsp">增加图片</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-right">
+            <c:if test="${requestScope.list.size()==0}">
+                <p>暂无可编辑的新闻，请添加新闻！</p>
+            </c:if>
+            <c:if test="${requestScope.list.size()>0}">
+                <div class="news-list-item">
+                    <form id="operate_form" method="post">
+                        <table id="showTable">
+                            <tr>
+                                <th>序号</th>
+                                <th>标签</th>
+                                <th>来源</th>
+                                <th class="overEllipsis">标题</th>
+                                <th colspan="4">操作</th>
+                            </tr>
+                            <c:forEach items="${requestScope.list}" var="news">
+                                <tr>
+                                    <td>${news.getId()}<img src="${requestScope.list.getImgPath()}" style="width：16px；height:18px;"></td>
+                                    <td>${news.getAuthor()}</td>
+                                    <td>${news.getType()()}</td>
+                                    <td class="overEllipsis item" title="${news.getNewsTitle()}">
+                                        ${news.getNewsTitle()}
+                                    </td>
+                                    <td>
+                                        <a href="/test1_war_exploded/newsServlet?action=detailNews&id=${news.getId()}&from=user"
+                                           class="editBtn" id="detailsBtn">详情</a>
+                                        <a href="/test1_war_exploded/newsServlet?action=deleteNews&id=${news.getId()}int=id"
+                                           class="editBtn" id="deleteBtn">删除</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </form>
+                </div>
+            </c:if>s
+        </div>
+
+        <footer class="copyright">
+        </footer>
+    </div>
+</div>
+</body>
+</html>

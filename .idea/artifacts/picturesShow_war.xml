@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="picturesShow:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>picturesShow</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="picturesShow-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="picturesShow:war exploded" />
+    </root>
+  </artifact>
+</component>
